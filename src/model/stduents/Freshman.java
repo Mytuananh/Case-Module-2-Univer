@@ -1,6 +1,6 @@
 package model.stduents;
 
-public class Freshman {
+public class Freshman extends GeneralInformationStudent {
     private String name;
     private String dateOfBirth;
     private String codeStudent;
@@ -35,6 +35,7 @@ public class Freshman {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getDateOfBirth() {
         return dateOfBirth;

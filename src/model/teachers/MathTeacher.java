@@ -1,6 +1,6 @@
 package model.teachers;
 
-public class MathTeacher {
+public class MathTeacher extends GeneralInformationTeacher {
     private String name;
     private String dateOfBirth;
     private String codeTeacher;

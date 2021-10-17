@@ -1,6 +1,6 @@
 package model.stduents;
 
-public class FourthYearStudent {
+public class FourthYearStudent extends GeneralInformationStudent {
     private String name;
     private String dateOfBirth;
     private String codeStudent;
