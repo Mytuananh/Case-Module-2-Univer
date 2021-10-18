@@ -11,6 +11,10 @@ public class FinalYearStudentManager {
         this.finalYearStudentArrayList = finalYearStudentArrayList;
     }
 
+    public FinalYearStudentManager() {
+
+    }
+
     public ArrayList<FinalYearStudent> getFinalYearStudentArrayList() {
         return finalYearStudentArrayList;
     }

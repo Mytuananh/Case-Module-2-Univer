@@ -11,6 +11,10 @@ public class SophomoreManager {
         this.sophomoreArrayList = sophomoreArrayList;
     }
 
+    public SophomoreManager() {
+
+    }
+
     public ArrayList<Sophomore> getSophomoreArrayList() {
         return sophomoreArrayList;
     }

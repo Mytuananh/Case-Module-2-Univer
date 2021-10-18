@@ -11,6 +11,10 @@ public class FourthYearStudentManager {
         this.fourthYearStudentArrayList = fourthYearStudentArrayList;
     }
 
+    public FourthYearStudentManager() {
+
+    }
+
     public ArrayList<FourthYearStudent> getFourthYearStudentArrayList() {
         return fourthYearStudentArrayList;
     }

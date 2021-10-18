@@ -11,6 +11,10 @@ public class FreshmanManager {
         this.freshmanArrayList = freshmanArrayList;
     }
 
+    public FreshmanManager() {
+
+    }
+
     public ArrayList<Freshman> getFreshmanArrayList() {
         return freshmanArrayList;
     }

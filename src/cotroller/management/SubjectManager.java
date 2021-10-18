@@ -1,4 +1,4 @@
-package cotroller;
+package cotroller.management;
 
 import model.Subject;
 
