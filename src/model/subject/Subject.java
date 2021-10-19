@@ -1,6 +1,9 @@
-package model;
+package model.subject;
 
-public class Subject {
+import java.io.Serializable;
+
+public class Subject implements Serializable {
+    private String codeSubject;
     private String name;
     private double tuition;
     private String nameTeacher;
@@ -8,10 +11,11 @@ public class Subject {
     public Subject() {
     }
 
-    public Subject(String name, double tuition, String nameTeacher) {
+    public Subject(String name, double tuition, String nameTeacher, String codeSubject) {
         this.name = name;
         this.tuition = tuition;
         this.nameTeacher = nameTeacher;
+        this.codeSubject = codeSubject;
     }
 
     public String getName() {
@@ -38,12 +42,21 @@ public class Subject {
         this.nameTeacher = nameTeacher;
     }
 
+    public String getCodeSubject() {
+        return codeSubject;
+    }
+
+    public void setCodeSubject(String codeSubject) {
+        this.codeSubject = codeSubject;
+    }
+
     @Override
     public String toString() {
         return "Subject{" +
-                "name = '" + name + '\'' +
-                ", tuition = " + tuition +
-                ", nameTeacher = '" + nameTeacher + '\'' +
+                "codeSubject='" + codeSubject + '\'' +
+                ", name='" + name + '\'' +
+                ", tuition=" + tuition +
+                ", nameTeacher='" + nameTeacher + '\'' +
                 '}';
     }
 }

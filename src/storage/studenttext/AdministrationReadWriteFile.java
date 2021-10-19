@@ -1,4 +1,4 @@
-package storage.student;
+package storage.studenttext;
 
 import model.students.AdministrationStudent;
 

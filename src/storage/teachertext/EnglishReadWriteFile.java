@@ -1,4 +1,4 @@
-package storage.teacher;
+package storage.teachertext;
 
 import model.teachers.EnglishTeacher;
 

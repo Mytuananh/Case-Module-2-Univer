@@ -1,4 +1,4 @@
-package storage.teacher;
+package storage.teachertext;
 
 import java.io.IOException;
 import java.util.ArrayList;

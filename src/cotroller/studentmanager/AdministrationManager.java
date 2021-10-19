@@ -1,7 +1,7 @@
 package cotroller.studentmanager;
 
 import model.students.AdministrationStudent;
-import storage.student.AdministrationReadWriteFile;
+import storage.studenttext.AdministrationReadWriteFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
