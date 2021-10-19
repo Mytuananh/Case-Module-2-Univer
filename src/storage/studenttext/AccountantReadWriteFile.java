@@ -18,7 +18,7 @@ public class AccountantReadWriteFile implements Student<AccountantStudent> {
     }
     @Override
     public ArrayList<AccountantStudent> readFile() throws IOException, ClassNotFoundException {
-        File file = new File("sophomore.txt");
+        File file = new File("accountant.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -36,7 +36,7 @@ public class AccountantReadWriteFile implements Student<AccountantStudent> {
 
     @Override
     public void writeFile(ArrayList<AccountantStudent> accountantStudentArrayList) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("sophomore.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("accountant.txt");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(accountantStudentArrayList);
         objectOutputStream.close();

@@ -85,4 +85,10 @@ public class SubjectManager {
         }
         return subject;
     }
+
+    public void showSubject() {
+        for (Subject sub: subjectArrayList) {
+            System.out.println(sub);
+        }
+    }
 }

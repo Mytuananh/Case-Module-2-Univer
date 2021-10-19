@@ -1,5 +1,6 @@
 package cotroller.studentmanager;
 
+import model.students.AccountantStudent;
 import model.students.AdministrationStudent;
 import storage.studenttext.AdministrationReadWriteFile;
 
@@ -84,5 +85,10 @@ public class AdministrationManager {
             }
         }
         return administrationStudent;
+    }
+    public void showAdministrationStudent() {
+        for (AdministrationStudent acc: administrationStudentArrayList) {
+            System.out.println(acc);
+        }
     }
 }

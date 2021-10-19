@@ -18,7 +18,7 @@ public class ConstructionReadWriteFile implements Student<ConstructionStudent>{
     }
     @Override
     public ArrayList<ConstructionStudent> readFile() throws IOException, ClassNotFoundException {
-        File file = new File("freshman.txt");
+        File file = new File("construction.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -37,7 +37,7 @@ public class ConstructionReadWriteFile implements Student<ConstructionStudent>{
 
     @Override
     public void writeFile(ArrayList<ConstructionStudent> constructionStudentArrayList) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("freshman.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("construction.txt");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(constructionStudentArrayList);
         objectOutputStream.close();

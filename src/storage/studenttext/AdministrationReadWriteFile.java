@@ -18,7 +18,7 @@ public class AdministrationReadWriteFile implements Student<AdministrationStuden
     }
     @Override
     public ArrayList<AdministrationStudent> readFile() throws IOException, ClassNotFoundException {
-        File file = new File("thirdYear.txt");
+        File file = new File("administration.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -36,7 +36,7 @@ public class AdministrationReadWriteFile implements Student<AdministrationStuden
 
     @Override
     public void writeFile(ArrayList<AdministrationStudent> administrationStudentArrayList) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("thirdYear.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("administration.txt");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(administrationStudentArrayList);
         objectOutputStream.close();

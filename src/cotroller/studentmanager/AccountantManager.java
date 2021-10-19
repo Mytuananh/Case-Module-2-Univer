@@ -87,4 +87,9 @@ public class AccountantManager {
         }
         return accountantStudent;
     }
+    public void showAccountantStudent() {
+        for (AccountantStudent acc: accountantStudentArrayList) {
+            System.out.println(acc);
+        }
+    }
 }

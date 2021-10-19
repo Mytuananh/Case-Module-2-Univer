@@ -1,5 +1,6 @@
 package cotroller.studentmanager;
 
+import model.students.AccountantStudent;
 import model.students.ConstructionStudent;
 import storage.studenttext.ConstructionReadWriteFile;
 
@@ -84,6 +85,12 @@ public class ConstructionManager {
             }
         }
         return constructionStudent;
+    }
+
+    public void showConstructionStudent() {
+        for (ConstructionStudent con: constructionStudentArrayList) {
+            System.out.println(con);
+        }
     }
 
 
