@@ -1,16 +1,18 @@
-package model.stduents;
+package model.students;
 
-public class ThirdYearStudent extends GeneralInformationStudent {
+import java.io.Serializable;
+
+public class AdministrationStudent extends GeneralInformationStudent implements Serializable {
     private String name;
     private String dateOfBirth;
     private String codeStudent;
     private String className;
     private String homeTown;
 
-    public ThirdYearStudent() {
+    public AdministrationStudent() {
     }
 
-    public ThirdYearStudent(String name, String dateOfBirth, String codeStudent, String className, String homeTown) {
+    public AdministrationStudent(String name, String dateOfBirth, String codeStudent, String className, String homeTown) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.codeStudent = codeStudent;
@@ -60,7 +62,7 @@ public class ThirdYearStudent extends GeneralInformationStudent {
 
     @Override
     public String toString() {
-        return "ThirdYearStudent{" +
+        return "AdministrationStudent{" +
                 "name = '" + name + '\'' +
                 ", dateOfBirth = '" + dateOfBirth + '\'' +
                 ", codeStudent = '" + codeStudent + '\'' +

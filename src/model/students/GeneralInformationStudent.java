@@ -1,4 +1,4 @@
-package model.stduents;
+package model.students;
 
 public abstract class GeneralInformationStudent {
     abstract String getName();

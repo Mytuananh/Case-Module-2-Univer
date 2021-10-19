@@ -1,6 +1,8 @@
 package model.teachers;
 
-public class HydraulicTeacher extends GeneralInformationTeacher {
+import java.io.Serializable;
+
+public class HydraulicTeacher extends GeneralInformationTeacher implements Serializable {
     private String name;
     private String dateOfBirth;
     private String codeTeacher;

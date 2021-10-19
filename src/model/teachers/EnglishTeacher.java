@@ -1,6 +1,8 @@
 package model.teachers;
 
-public class EnglishTeacher extends GeneralInformationTeacher {
+import java.io.Serializable;
+
+public class EnglishTeacher extends GeneralInformationTeacher implements Serializable {
     private String name;
     private String dateOfBirth;
     private String codeTeacher;

@@ -1,31 +1,23 @@
-package model.stduents;
+package model.students;
 
-public class FinalYearStudent extends GeneralInformationStudent {
+import java.io.Serializable;
+
+public class AccountantStudent extends GeneralInformationStudent implements Serializable {
     private String name;
     private String dateOfBirth;
     private String codeStudent;
     private String className;
     private String homeTown;
-    private double finalGrade;
 
-    public FinalYearStudent() {
+    public AccountantStudent() {
     }
 
-    public FinalYearStudent(String name, String dateOfBirth, String codeStudent, String className, String homeTown) {
+    public AccountantStudent(String name, String dateOfBirth, String codeStudent, String className, String homeTown) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.codeStudent = codeStudent;
         this.className = className;
         this.homeTown = homeTown;
-    }
-
-    public FinalYearStudent(String name, String dateOfBirth, String codeStudent, String className, String homeTown, double finalGrade) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.codeStudent = codeStudent;
-        this.className = className;
-        this.homeTown = homeTown;
-        this.finalGrade = finalGrade;
     }
 
     public String getName() {
@@ -68,23 +60,14 @@ public class FinalYearStudent extends GeneralInformationStudent {
         this.homeTown = homeTown;
     }
 
-    public double getFinalGrade() {
-        return finalGrade;
-    }
-
-    public void setFinalGrade(double finalGrade) {
-        this.finalGrade = finalGrade;
-    }
-
     @Override
     public String toString() {
-        return "FinalYearStudent{" +
-                "name='" + name + '\'' +
+        return "AccountantStudent{" +
+                "name = '" + name + '\'' +
                 ", dateOfBirth = '" + dateOfBirth + '\'' +
                 ", codeStudent = '" + codeStudent + '\'' +
                 ", className = '" + className + '\'' +
                 ", homeTown = '" + homeTown + '\'' +
-                ", finalGrade = " + finalGrade +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package cotroller;
+package cotroller.management;
 
 import cotroller.teachermanager.EnglishTeacherManager;
 import cotroller.teachermanager.HydraulicTeacherManager;

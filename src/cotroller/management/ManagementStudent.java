@@ -1,68 +1,47 @@
 package cotroller.management;
 
 import cotroller.studentmanager.*;
-import model.stduents.Freshman;
-
-import java.util.ArrayList;
 
 public class ManagementStudent {
 
-    private FreshmanManager freshmanManager;
-    private SophomoreManager sophomoreManager;
-    private ThirdYearStudentManager thirdYearStudentManager;
-    private FourthYearStudentManager fourthYearStudentManager;
-    private FinalYearStudentManager finalYearStudentManager;
+    private ConstructionManager constructionManager;
+    private AccountantManager accountantManager;
+    private AdministrationManager administrationManager;
 
     public ManagementStudent() {
     }
 
-    public ManagementStudent(FreshmanManager freshmanManager, SophomoreManager sophomoreManager, ThirdYearStudentManager thirdYearStudentManager, FourthYearStudentManager fourthYearStudentManager, FinalYearStudentManager finalYearStudentManager) {
-        this.freshmanManager = freshmanManager;
-        this.sophomoreManager = sophomoreManager;
-        this.thirdYearStudentManager = thirdYearStudentManager;
-        this.fourthYearStudentManager = fourthYearStudentManager;
-        this.finalYearStudentManager = finalYearStudentManager;
+    public ManagementStudent(ConstructionManager constructionManager, AccountantManager accountantManager, AdministrationManager administrationManager) {
+        this.constructionManager = constructionManager;
+        this.accountantManager = accountantManager;
+        this.administrationManager = administrationManager;
+
     }
 
-    public FreshmanManager getFreshmanManager() {
-        return freshmanManager;
+    public ConstructionManager getFreshmanManager() {
+        return constructionManager;
     }
 
-    public void setFreshmanManager(FreshmanManager freshmanManager) {
-        this.freshmanManager = freshmanManager;
+    public void setFreshmanManager(ConstructionManager constructionManager) {
+        this.constructionManager = constructionManager;
     }
 
-    public SophomoreManager getSophomoreManager() {
-        return sophomoreManager;
+    public AccountantManager getSophomoreManager() {
+        return accountantManager;
     }
 
-    public void setSophomoreManager(SophomoreManager sophomoreManager) {
-        this.sophomoreManager = sophomoreManager;
+    public void setSophomoreManager(AccountantManager accountantManager) {
+        this.accountantManager = accountantManager;
     }
 
-    public ThirdYearStudentManager getThirdYearStudentManager() {
-        return thirdYearStudentManager;
+    public AdministrationManager getThirdYearStudentManager() {
+        return administrationManager;
     }
 
-    public void setThirdYearStudentManager(ThirdYearStudentManager thirdYearStudentManager) {
-        this.thirdYearStudentManager = thirdYearStudentManager;
+    public void setThirdYearStudentManager(AdministrationManager administrationManager) {
+        this.administrationManager = administrationManager;
     }
 
-    public FourthYearStudentManager getFourthYearStudentManager() {
-        return fourthYearStudentManager;
-    }
-
-    public void setFourthYearStudentManager(FourthYearStudentManager fourthYearStudentManager) {
-        this.fourthYearStudentManager = fourthYearStudentManager;
-    }
-
-    public FinalYearStudentManager getFinalYearStudentManager() {
-        return finalYearStudentManager;
-    }
-
-    public void setFinalYearStudentManager(FinalYearStudentManager finalYearStudentManager) {
-        this.finalYearStudentManager = finalYearStudentManager;
-    }
 
 
 }
