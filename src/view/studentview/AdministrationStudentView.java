@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AdministrationStudentView {
-    private static AdministrationStudentView administrationStudentView = new AdministrationStudentView();
+    private static final AdministrationStudentView administrationStudentView = new AdministrationStudentView();
     private AdministrationStudentView() {
     }
 
@@ -24,7 +24,7 @@ public class AdministrationStudentView {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        int choice = -1;
+        int choice = -2;
         while (choice != -1) {
             System.out.println("Danh sách sinh viên ngành Quản Lý");
             System.out.println("1. Thêm sinh viên");
@@ -98,7 +98,7 @@ public class AdministrationStudentView {
         return new AdministrationStudent(name, dateOfBirth, codeStudent, className, homeTown);
     }
     private void addStudent(AdministrationManager administrationManager) {
-        inputStudent();
+
         administrationManager.addNewStudent(inputStudent());
     }
     private void editStudent(AdministrationManager administrationManager) {

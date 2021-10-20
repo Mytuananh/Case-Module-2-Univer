@@ -41,10 +41,9 @@ public class AccountantManager {
     }
 
     public void removeStudent(String codeStudent) {
-        AccountantStudent accountantStudent = searchStudent(codeStudent);
-        if (accountantStudent != null) {
+        if (accountantStudentArrayList != null) {
             for (int i = 0; i < accountantStudentArrayList.size(); i++) {
-                if (accountantStudentArrayList.get(i).equals(accountantStudent)) {
+                if (accountantStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     accountantStudentArrayList.remove(i);
                 }
             }
@@ -60,10 +59,9 @@ public class AccountantManager {
     }
 
     public void editAccountantStudentArrayList(String codeStudent, AccountantStudent accountantStudent) {
-        AccountantStudent accountantStudent1 = searchStudent(codeStudent);
-        if (accountantStudent1 != null) {
+        if (accountantStudentArrayList != null) {
             for (int i = 0; i < accountantStudentArrayList.size(); i++) {
-                if (accountantStudentArrayList.get(i).equals(accountantStudent1)) {
+                if (accountantStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     accountantStudentArrayList.set(i, accountantStudent);
                 }
             }

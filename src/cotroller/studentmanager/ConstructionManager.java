@@ -41,10 +41,9 @@ public class ConstructionManager {
     }
 
     public void removeStudent(String codeStudent) {
-        ConstructionStudent constructionStudent = searchStudent(codeStudent);
-        if (constructionStudent != null) {
+        if (constructionStudentArrayList != null) {
             for (int i = 0; i < constructionStudentArrayList.size(); i++) {
-                if (constructionStudentArrayList.get(i).equals(constructionStudent)) {
+                if (constructionStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     constructionStudentArrayList.remove(i);
                 }
             }
@@ -59,10 +58,9 @@ public class ConstructionManager {
     }
 
     public void editConstructionStudentArrayList(String codeStudent, ConstructionStudent constructionStudent) {
-        ConstructionStudent constructionStudent1 = searchStudent(codeStudent);
-        if (constructionStudent1 != null) {
+        if (constructionStudentArrayList != null) {
             for (int i = 0; i < constructionStudentArrayList.size(); i++) {
-                if (constructionStudentArrayList.get(i).equals(constructionStudent1)) {
+                if (constructionStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     constructionStudentArrayList.set(i, constructionStudent);
                 }
             }

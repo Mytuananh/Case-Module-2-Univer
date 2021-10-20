@@ -3,11 +3,12 @@ package view.subjectview;
 import java.util.Scanner;
 
 public class AllSubjectView {
+    private static final English english = English.getInstance();
+    private static final Hydraulic hydraulic = Hydraulic.getInstance();
+    private static final Math math = Math.getInstance();
+    private static final Mechanics mechanics = Mechanics.getInstance();
     public void runAllSub() {
-        English english = English.getInstance();
-        Hydraulic hydraulic = Hydraulic.getInstance();
-        Math math = Math.getInstance();
-        Mechanics mechanics = Mechanics.getInstance();
+
         int choice = -1;
 
         while (choice != -1) {

@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AccountantStudentView {
-    private static AccountantStudentView accountantStudentView = new AccountantStudentView();
+    private static final AccountantStudentView accountantStudentView = new AccountantStudentView();
+
     private AccountantStudentView() {
     }
 
@@ -18,12 +19,13 @@ public class AccountantStudentView {
     }
     public void runAccountant() {
         AccountantManager accountantManager = AccountantManager.getInstance();
+
         try {
             accountantManager.setAccountantStudentArrayList(AccountantReadWriteFile.getInstance().readFile());
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        int choice = -1;
+        int choice = -2;
         while (choice != -1) {
             System.out.println("Danh sách sinh viên ngành Kế Toán");
             System.out.println("1. Thêm sinh viên");
@@ -98,7 +100,7 @@ public class AccountantStudentView {
         return new AccountantStudent(name, dateOfBirth, codeStudent, className, homeTown);
     }
     private void addStudent(AccountantManager accountantManager) {
-        inputStudent();
+
         accountantManager.addNewStudent(inputStudent());
     }
     private void editStudent(AccountantManager accountantManager) {

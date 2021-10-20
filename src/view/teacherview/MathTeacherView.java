@@ -24,7 +24,7 @@ public class MathTeacherView {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        int choice = -1;
+        int choice = -2;
         while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Toán!");
             System.out.println("1. Thêm giảng viên");
@@ -95,7 +95,6 @@ public class MathTeacherView {
         return new MathTeacher(name, dateOfBirth, codeTeacher, homeTown);
     }
     private void addTeacher(MathTeacherManager mathTeacherManager) {
-        inputTeacher();
         mathTeacherManager.addNewTeacher(inputTeacher());
     }
     private void editTeacher(MathTeacherManager mathTeacherManager) {

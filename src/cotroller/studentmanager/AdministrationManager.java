@@ -41,10 +41,9 @@ public class AdministrationManager {
     }
 
     public void removeStudent(String codeStudent) {
-        AdministrationStudent administrationStudent = searchStudent(codeStudent);
-        if (administrationStudent != null) {
+        if (administrationStudentArrayList != null) {
             for (int i = 0; i < administrationStudentArrayList.size(); i++) {
-                if (administrationStudentArrayList.get(i).equals(administrationStudent)) {
+                if (administrationStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     administrationStudentArrayList.remove(i);
                 }
             }
@@ -59,10 +58,9 @@ public class AdministrationManager {
     }
 
     public void editAdministrationStudentArrayList(String codeStudent, AdministrationStudent administrationStudent) {
-        AdministrationStudent administrationStudent1 = searchStudent(codeStudent);
-        if (administrationStudent1 != null) {
+        if (administrationStudentArrayList != null) {
             for (int i = 0; i < administrationStudentArrayList.size(); i++) {
-                if (administrationStudentArrayList.get(i).equals(administrationStudent1)) {
+                if (administrationStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
                     administrationStudentArrayList.set(i, administrationStudent);
                 }
             }

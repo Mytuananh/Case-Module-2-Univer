@@ -23,7 +23,7 @@ public class HydraulicTeacherView {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        int choice = -1;
+        int choice = -2;
         while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Thủy Công!");
             System.out.println("1. Thêm giảng viên");
@@ -94,7 +94,6 @@ public class HydraulicTeacherView {
         return new HydraulicTeacher(name, dateOfBirth, codeTeacher, homeTown);
     }
     private void addTeacher(HydraulicTeacherManager hydraulicTeacherManager) {
-        inputTeacher();
         hydraulicTeacherManager.addNewTeacher(inputTeacher());
     }
     private void editTeacher(HydraulicTeacherManager hydraulicTeacherManager) {

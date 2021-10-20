@@ -3,12 +3,14 @@ package view.teacherview;
 import java.util.Scanner;
 
 public class AllTeacherView {
+    private static final EnglishTeacherView englishTeacherView = EnglishTeacherView.getInstance();
+    private static final HydraulicTeacherView hydraulicTeacherView = HydraulicTeacherView.getInstance();
+    private static final MathTeacherView mathTeacherView = MathTeacherView.getInstance();
+    private static final MechanicsTeacherView mechanicsTeacherView = MechanicsTeacherView.getInstance();
     public void runTeacher() {
-        EnglishTeacherView englishTeacherView = EnglishTeacherView.getInstance();
-        HydraulicTeacherView hydraulicTeacherView = HydraulicTeacherView.getInstance();
-        MathTeacherView mathTeacherView = MathTeacherView.getInstance();
-        MechanicsTeacherView mechanicsTeacherView = MechanicsTeacherView.getInstance();
-        int choice = -1;
+
+
+        int choice = -2;
 
         while (choice != -1) {
             System.out.println("-----Quản lý giảng viên-----");
@@ -18,6 +20,7 @@ public class AllTeacherView {
             System.out.println("4. Giảng viên bộ môn cơ học");
             System.out.println("0. Quay lại");
             Scanner scanner = new Scanner(System.in);
+            choice = scanner.nextInt();
             switch (choice) {
                 case 1: {
                     System.out.println("1. Giảng viên bộ môn tiếng anh");
@@ -50,6 +53,4 @@ public class AllTeacherView {
             }
         }
     }
-
-
 }

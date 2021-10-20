@@ -41,10 +41,9 @@ public class MechanicsTeacherManager {
     }
 
     public void removeTeacher(String codeTeacher) {
-       MechanicsTeacher mechanicsTeacher = searchTeacher(codeTeacher);
-       if (mechanicsTeacher != null) {
+       if (mechanicsTeacherArrayList != null) {
            for (int i = 0; i < mechanicsTeacherArrayList.size(); i++) {
-               if (mechanicsTeacherArrayList.get(i).equals(mechanicsTeacher)) {
+               if (mechanicsTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                    mechanicsTeacherArrayList.remove(i);
                }
            }
@@ -59,10 +58,9 @@ public class MechanicsTeacherManager {
     }
 
     public void editMechanicsTeacherArrayList(String codeTeacher, MechanicsTeacher mechanicsTeacher) {
-        MechanicsTeacher mechanicsTeacher1 = searchTeacher(codeTeacher);
-        if (mechanicsTeacher1 != null) {
+        if (mechanicsTeacherArrayList != null) {
             for (int i = 0; i < mechanicsTeacherArrayList.size(); i++) {
-                if (mechanicsTeacherArrayList.get(i).equals(mechanicsTeacher1)) {
+                if (mechanicsTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     mechanicsTeacherArrayList.set(i, mechanicsTeacher);
                 }
             }

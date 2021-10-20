@@ -41,10 +41,9 @@ public class MathTeacherManager {
     }
 
     public void removeTeacher(String codeTeacher) {
-        MathTeacher mathTeacher = searchTeacher(codeTeacher);
-        if (mathTeacher != null) {
+        if (mathTeacherArrayList != null) {
             for (int i = 0; i < mathTeacherArrayList.size(); i++) {
-                if (mathTeacherArrayList.get(i).equals(mathTeacher)) {
+                if (mathTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     mathTeacherArrayList.remove(i);
                 }
             }
@@ -59,10 +58,9 @@ public class MathTeacherManager {
     }
 
     public void editMathTeacherArrayList(String codeTeacher, MathTeacher mathTeacher) {
-        MathTeacher mathTeacher1 = searchTeacher(codeTeacher);
-        if (mathTeacher1 != null) {
+        if (mathTeacherArrayList != null) {
             for (int i = 0; i < mathTeacherArrayList.size(); i++) {
-                if (mathTeacherArrayList.get(i).equals(mathTeacher1)) {
+                if (mathTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     mathTeacherArrayList.set(i, mathTeacher);
                 }
             }

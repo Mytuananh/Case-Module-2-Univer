@@ -40,10 +40,9 @@ public class HydraulicTeacherManager {
     }
 
     public void removeTeacher(String codeTeacher) {
-       HydraulicTeacher hydraulicTeacher = searchTeacher(codeTeacher);
-       if (hydraulicTeacher != null) {
+       if (hydraulicTeacherArrayList != null) {
            for (int i = 0; i < hydraulicTeacherArrayList.size(); i++) {
-               if (hydraulicTeacherArrayList.get(i).equals(hydraulicTeacher)) {
+               if (hydraulicTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                    hydraulicTeacherArrayList.remove(i);
                }
            }
@@ -58,10 +57,9 @@ public class HydraulicTeacherManager {
     }
 
     public void editHydraulicTeacherArrayList(String codeTeacher, HydraulicTeacher hydraulicTeacher) {
-        HydraulicTeacher hydraulicTeacher1 = searchTeacher(codeTeacher);
-        if (hydraulicTeacher1 != null) {
+        if (hydraulicTeacherArrayList != null) {
             for (int i = 0; i < hydraulicTeacherArrayList.size(); i++) {
-                if (hydraulicTeacherArrayList.get(i).equals(hydraulicTeacher1)) {
+                if (hydraulicTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     hydraulicTeacherArrayList.set(i,hydraulicTeacher);
                 }
             }

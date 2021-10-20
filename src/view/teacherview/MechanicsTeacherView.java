@@ -25,7 +25,7 @@ public class MechanicsTeacherView {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        int choice = -1;
+        int choice = -2;
         while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Cơ Học!");
             System.out.println("1. Thêm giảng viên");
@@ -96,7 +96,6 @@ public class MechanicsTeacherView {
         return new MechanicsTeacher(name, dateOfBirth, codeTeacher, homeTown);
     }
     private void addTeacher(MechanicsTeacherManager mechanicsTeacherManager) {
-        inputTeacher();
         mechanicsTeacherManager.addNewTeacher(inputTeacher());
     }
     private void editTeacher(MechanicsTeacherManager mechanicsTeacherManager) {

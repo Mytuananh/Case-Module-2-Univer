@@ -3,12 +3,14 @@ package view.studentview;
 import java.util.Scanner;
 
 public class AllStudentView {
-    public void runStudent() {
-        AccountantStudentView accountantStudentView = AccountantStudentView.getInstance();
-        AdministrationStudentView administrationStudentView = AdministrationStudentView.getInstance();
-        ConstructionStudentView constructionStudentView = ConstructionStudentView.getInstance();
+    private static final AccountantStudentView accountantStudentView = AccountantStudentView.getInstance();
+    private static final AdministrationStudentView administrationStudentView = AdministrationStudentView.getInstance();
+    private static final ConstructionStudentView constructionStudentView = ConstructionStudentView.getInstance();
 
-        int choice = -1;
+    public void runStudent() {
+
+        int choice = -2;
+
 
         while (choice != -1) {
             System.out.println("-----Quản lý sinh viên-----");

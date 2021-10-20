@@ -40,10 +40,9 @@ public class EnglishTeacherManager {
     }
 
     public void removeTeacher(String codeTeacher) {
-        EnglishTeacher englishTeacher = searchTeacher(codeTeacher);
-        if (englishTeacher != null) {
+        if (englishTeacherArrayList != null) {
             for (int i = 0; i < englishTeacherArrayList.size(); i++) {
-                if (englishTeacherArrayList.get(i).equals(englishTeacher)) {
+                if (englishTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     englishTeacherArrayList.remove(i);
                 }
             }
@@ -58,10 +57,9 @@ public class EnglishTeacherManager {
     }
 
     public void editEnglishTeacherArrayList(String codeTeacher, EnglishTeacher englishTeacher) {
-        EnglishTeacher englishTeacher1 = searchTeacher(codeTeacher);
-        if (englishTeacher1 != null) {
+        if (englishTeacherArrayList != null) {
             for (int i = 0; i < englishTeacherArrayList.size(); i++) {
-                if (englishTeacherArrayList.get(i).equals(englishTeacher1)) {
+                if (englishTeacherArrayList.get(i).getCodeTeacher().equals(codeTeacher)) {
                     englishTeacherArrayList.set(i, englishTeacher);
                 }
             }
