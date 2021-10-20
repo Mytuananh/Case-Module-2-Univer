@@ -10,6 +10,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AdministrationStudentView {
+    private static AdministrationStudentView administrationStudentView = new AdministrationStudentView();
+    private AdministrationStudentView() {
+    }
+
+    public static AdministrationStudentView getInstance() {
+        return administrationStudentView;
+    }
     public void runAdministration() {
         AdministrationManager administrationManager = AdministrationManager.getInstance();
         try {
@@ -18,7 +25,7 @@ public class AdministrationStudentView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách sinh viên ngành Quản Lý");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");

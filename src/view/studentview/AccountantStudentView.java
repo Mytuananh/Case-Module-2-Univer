@@ -9,6 +9,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AccountantStudentView {
+    private static AccountantStudentView accountantStudentView = new AccountantStudentView();
+    private AccountantStudentView() {
+    }
+
+    public static AccountantStudentView getInstance() {
+        return accountantStudentView;
+    }
     public void runAccountant() {
         AccountantManager accountantManager = AccountantManager.getInstance();
         try {
@@ -17,7 +24,7 @@ public class AccountantStudentView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách sinh viên ngành Kế Toán");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");

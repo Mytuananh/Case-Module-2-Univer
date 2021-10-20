@@ -9,6 +9,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class HydraulicTeacherView {
+    private static HydraulicTeacherView hydraulicTeacherView = new HydraulicTeacherView();
+    private HydraulicTeacherView() {
+    }
+
+    public static HydraulicTeacherView getInstance() {
+        return hydraulicTeacherView;
+    }
     public void runHydraulic() {
         HydraulicTeacherManager hydraulicTeacherManager = HydraulicTeacherManager.getInstance();
         try {
@@ -17,7 +24,7 @@ public class HydraulicTeacherView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Thủy Công!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");

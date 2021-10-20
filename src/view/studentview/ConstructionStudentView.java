@@ -10,6 +10,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ConstructionStudentView {
+    private static ConstructionStudentView constructionStudentView = new ConstructionStudentView();
+    private ConstructionStudentView() {
+    }
+
+    public static ConstructionStudentView getInstance() {
+        return constructionStudentView;
+    }
     public void runConstruction() {
         ConstructionManager constructionManager = ConstructionManager.getInstance();
         try {
@@ -18,7 +25,7 @@ public class ConstructionStudentView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách sinh viên ngành Công Trình");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");

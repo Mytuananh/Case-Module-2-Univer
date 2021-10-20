@@ -11,6 +11,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MechanicsTeacherView {
+    private static MechanicsTeacherView mechanicsTeacherView = new MechanicsTeacherView();
+    private MechanicsTeacherView() {
+    }
+
+    public static MechanicsTeacherView getInstance() {
+        return mechanicsTeacherView;
+    }
     public void runMechanics() {
         MechanicsTeacherManager mechanicsTeacherManager = MechanicsTeacherManager.getInstance();
         try {
@@ -19,7 +26,7 @@ public class MechanicsTeacherView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Cơ Học!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");

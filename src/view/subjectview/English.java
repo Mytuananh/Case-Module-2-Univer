@@ -6,6 +6,13 @@ import model.subject.Subject;
 import java.util.ArrayList;
 
 public class English {
+    private static English english = new English();
+    private English() {
+    }
+
+    public static English getInstance() {
+        return  english;
+    }
     public void runEnglish() {
         SubjectManager subjectManager = SubjectManager.getInstance();
         ArrayList<Subject> englishArrayList = new ArrayList<>();

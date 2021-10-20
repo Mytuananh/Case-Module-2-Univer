@@ -6,6 +6,13 @@ import model.subject.Subject;
 import java.util.ArrayList;
 
 public class Mechanics {
+    private static Mechanics mechanics = new Mechanics();
+    private Mechanics() {
+    }
+
+    public static Mechanics getInstance() {
+        return mechanics;
+    }
     public void runMechanics() {
         SubjectManager subjectManager = SubjectManager.getInstance();
         ArrayList<Subject> mechanicsArrayList = new ArrayList<>();

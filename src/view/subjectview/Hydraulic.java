@@ -6,6 +6,13 @@ import model.subject.Subject;
 import java.util.ArrayList;
 
 public class Hydraulic {
+    private static Hydraulic hydraulic = new Hydraulic();
+    private Hydraulic() {
+    }
+
+    public static Hydraulic getInstance() {
+        return hydraulic;
+    }
     public void runHydraulic() {
         SubjectManager subjectManager = SubjectManager.getInstance();
         ArrayList<Subject> hydraulicArrayList = new ArrayList<>();

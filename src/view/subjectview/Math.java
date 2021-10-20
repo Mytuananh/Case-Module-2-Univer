@@ -6,6 +6,12 @@ import model.subject.Subject;
 import java.util.ArrayList;
 
 public class Math {
+    private static Math math = new Math();
+    private Math() {
+    }
+    public static Math getInstance() {
+        return math;
+    }
     public  void runMath() {
         SubjectManager subjectManager = SubjectManager.getInstance();
         ArrayList<Subject> mathArrayList = new ArrayList<>();

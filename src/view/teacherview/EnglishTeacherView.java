@@ -9,6 +9,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class EnglishTeacherView {
+    private static EnglishTeacherView englishTeacherView = new EnglishTeacherView();
+    private EnglishTeacherView() {
+    }
+
+    public  static EnglishTeacherView getInstance() {
+        return englishTeacherView;
+    }
     public void runEnglish() {
         EnglishTeacherManager englishTeacherManager = EnglishTeacherManager.getInstance();
         try {
@@ -17,7 +24,7 @@ public class EnglishTeacherView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn English!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");

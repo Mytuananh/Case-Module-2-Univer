@@ -10,6 +10,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MathTeacherView {
+    private static MathTeacherView mathTeacherView = new MathTeacherView();
+    private MathTeacherView() {
+    }
+
+    public static MathTeacherView getInstance() {
+        return mathTeacherView;
+    }
     public void runMath() {
         MathTeacherManager mathTeacherManager = MathTeacherManager.getInstance();
         try {
@@ -18,7 +25,7 @@ public class MathTeacherView {
             e.printStackTrace();
         }
         int choice = -1;
-        while (choice != 0) {
+        while (choice != -1) {
             System.out.println("Danh sách giảng viên bộ môn Toán!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");
