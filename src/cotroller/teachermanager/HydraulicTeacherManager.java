@@ -1,5 +1,6 @@
 package cotroller.teachermanager;
 
+import model.teachers.EnglishTeacher;
 import model.teachers.HydraulicTeacher;
 import storage.teachertext.HydraulicReadWriteFile;
 
@@ -78,5 +79,11 @@ public class HydraulicTeacherManager {
             }
         }
         return hydraulicTeacher;
+    }
+
+    public void showHydraulicTeacher() {
+        for (HydraulicTeacher hydraulic: hydraulicTeacherArrayList) {
+            System.out.println(hydraulic);
+        }
     }
 }

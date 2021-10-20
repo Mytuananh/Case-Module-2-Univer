@@ -1,5 +1,6 @@
 package cotroller.teachermanager;
 
+import model.teachers.EnglishTeacher;
 import model.teachers.MathTeacher;
 import storage.teachertext.MathReadWriteFile;
 
@@ -30,7 +31,7 @@ public class MathTeacherManager {
         this.mathTeacherArrayList = mathTeacherArrayList;
     }
 
-    public void addNewStudent(MathTeacher mathTeacher) {
+    public void addNewTeacher(MathTeacher mathTeacher) {
         mathTeacherArrayList.add(mathTeacher);
         try {
             mathReadWriteFile.writeFile(mathTeacherArrayList);
@@ -84,5 +85,11 @@ public class MathTeacherManager {
             }
         }
         return mathTeacher;
+    }
+
+    public void showMathTeacher() {
+        for (MathTeacher math: mathTeacherArrayList) {
+            System.out.println(math);
+        }
     }
 }

@@ -1,5 +1,6 @@
 package cotroller.teachermanager;
 
+import model.teachers.EnglishTeacher;
 import model.teachers.MechanicsTeacher;
 import storage.teachertext.MechanicsReadWriteFile;
 
@@ -57,7 +58,7 @@ public class MechanicsTeacherManager {
        }
     }
 
-    public void setMechanicsTeacherArrayList(String codeTeacher, MechanicsTeacher mechanicsTeacher) {
+    public void editMechanicsTeacherArrayList(String codeTeacher, MechanicsTeacher mechanicsTeacher) {
         MechanicsTeacher mechanicsTeacher1 = searchTeacher(codeTeacher);
         if (mechanicsTeacher1 != null) {
             for (int i = 0; i < mechanicsTeacherArrayList.size(); i++) {
@@ -84,5 +85,11 @@ public class MechanicsTeacherManager {
             }
         }
         return mechanicsTeacher;
+    }
+
+    public void showMechanicsTeacher() {
+        for (MechanicsTeacher mechanics: mechanicsTeacherArrayList) {
+            System.out.println(mechanics);
+        }
     }
 }

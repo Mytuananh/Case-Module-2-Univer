@@ -85,4 +85,10 @@ public class EnglishTeacherManager {
         }
         return englishTeacher;
     }
+
+    public void showEnglishTeacher() {
+        for (EnglishTeacher eng: englishTeacherArrayList) {
+            System.out.println(eng);
+        }
+    }
 }
