@@ -24,7 +24,7 @@ public class HydraulicTeacherView {
             e.printStackTrace();
         }
         int choice = -2;
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("Danh sách giảng viên bộ môn Thủy Công!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");
@@ -62,22 +62,16 @@ public class HydraulicTeacherView {
                     hydraulicTeacherManager.showHydraulicTeacher();
                     break;
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
+
             }
         }
     }
 
     public static HydraulicTeacher inputTeacher() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner4 = new Scanner(System.in);
         System.out.println("Nhập tên: ");
-        String name = scanner.nextLine();
+        String name = scanner4.nextLine();
 
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Nhập ngày tháng năm sinh: ");
@@ -87,9 +81,9 @@ public class HydraulicTeacherView {
         System.out.println("Nhập mã giảng viên: ");
         String codeTeacher = scanner2.nextLine();
 
-        Scanner scanner4 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập quê quán: ");
-        String homeTown = scanner4.nextLine();
+        String homeTown = scanner.nextLine();
 
         return new HydraulicTeacher(name, dateOfBirth, codeTeacher, homeTown);
     }

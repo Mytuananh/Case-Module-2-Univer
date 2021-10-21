@@ -12,7 +12,7 @@ public class AllTeacherView {
 
         int choice = -2;
 
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("-----Quản lý giảng viên-----");
             System.out.println("1. Giảng viên bộ môn tiếng anh");
             System.out.println("2. Giảng viên bộ môn thủy công");
@@ -42,14 +42,7 @@ public class AllTeacherView {
                     mechanicsTeacherView.runMechanics();
                     break;
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
             }
         }
     }

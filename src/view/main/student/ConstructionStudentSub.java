@@ -1,13 +1,20 @@
 package view.main.student;
 
 
+import cotroller.management.SubjectStudentManager;
+import cotroller.studentmanager.ConstructionManager;
+import model.students.ConstructionStudent;
 import model.subject.Subject;
+import model.subject.SubjectStudent;
+import storage.studenttext.ConstructionReadWriteFile;
+import storage.subjecttext.SubjectStudentText;
 import view.subjectview.English;
 import view.subjectview.Hydraulic;
 import view.subjectview.Math;
 import view.subjectview.Mechanics;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,19 +23,32 @@ public class ConstructionStudentSub {
     private static final Hydraulic hydraulic = Hydraulic.getInstance();
     private static final Math math = Math.getInstance();
     private static final Mechanics mechanics = Mechanics.getInstance();
+    private static ConstructionStudent constructionStudent;
+    SubjectStudentManager subjectStudentManager = SubjectStudentManager.getInstance();
     ArrayList<Subject> subjectList = new ArrayList<>();
+    ArrayList<SubjectStudent> subjectStudentArrayList = new ArrayList<>();
 
     public void runView() {
-
+        ConstructionManager constructionManager = ConstructionManager.getInstance();
+        try {
+            constructionManager.setConstructionStudentArrayList(ConstructionReadWriteFile.getInstance().readFile());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         int choice = -2;
 
-        while (choice != -1) {
+        while (choice != 0) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhập mã sinh viên: ");
+            String codeStudent = scanner.nextLine();
+            constructionStudent = constructionManager.searchStudent(codeStudent);
+            System.out.println(constructionStudent);
             System.out.println("-----Sinh viên khoa công trình-----");
             System.out.println("1. Đăng ký học");
             System.out.println("2. Xem học phí");
             System.out.println("0. Quay lại");
 
-            Scanner scanner = new Scanner(System.in);
+
             choice = scanner.nextInt();
 
             switch (choice) {
@@ -45,6 +65,7 @@ public class ConstructionStudentSub {
                     }
                     System.out.println("Học phí của học viên là:" + total);
                 }
+                case 0:
             }
         }
     }
@@ -52,7 +73,7 @@ public class ConstructionStudentSub {
     private void creatSub() {
         int choose = -2;
 
-        while (choose != -1) {
+        while (choose != 0) {
 
             System.out.println("-----Danh sách đăng ký học-----");
             System.out.println("1. Đăng ký bộ môn tiếng anh");
@@ -81,12 +102,7 @@ public class ConstructionStudentSub {
                     System.out.println("4. Danh sách bộ môn cơ học");
                     creatMech();
                 }
-                case 0: {
-                    System.exit(0);
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                }
+                case 0:
             }
         }
     }
@@ -121,6 +137,28 @@ public class ConstructionStudentSub {
         System.out.println("Nhập mã môn học: ");
         String codeSub = scanner1.nextLine();
         subjectList.add(english.sub(codeSub));
+    }
+
+    public SubjectStudent searchSubjectStudentMath(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(math.subNew(nameTeacher),constructionStudent);
+        return subjectStudent;
+    }
+
+    public SubjectStudent searchSubjectStudentEnglish(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(english.subNew(nameTeacher),constructionStudent);
+        return subjectStudent;
+    }
+
+    public SubjectStudent searchSubjectStudentHydraulic(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(hydraulic.subNew(nameTeacher),constructionStudent);
+        subjectStudentManager.addNewSubjectStudent(subjectStudent);
+        return subjectStudent;
+    }
+
+    public SubjectStudent searchSubjectStudentMechanics(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(mechanics.subNew(nameTeacher),constructionStudent);
+        subjectStudentManager.addNewSubjectStudent(subjectStudent);
+        return subjectStudent;
     }
 }
 

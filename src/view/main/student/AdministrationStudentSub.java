@@ -1,28 +1,48 @@
 package view.main.student;
 
+import cotroller.management.SubjectStudentManager;
+import cotroller.studentmanager.AdministrationManager;
+import model.students.AdministrationStudent;
 import model.subject.Subject;
+import model.subject.SubjectStudent;
+import storage.studenttext.AdministrationReadWriteFile;
+import storage.subjecttext.SubjectStudentText;
 import view.subjectview.English;
 import view.subjectview.Math;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdministrationStudentSub {
     private static final English english = English.getInstance();
     private static final Math math = Math.getInstance();
+    private static AdministrationStudent administrationStudent;
+    SubjectStudentManager subjectStudentManager = SubjectStudentManager.getInstance();
     ArrayList<Subject> subjectList = new ArrayList<>();
+    ArrayList<SubjectStudent> subjectStudentArrayList = new ArrayList<>();
 
     public void runView() {
-
+        AdministrationManager administrationManager =AdministrationManager.getInstance();
+        try {
+            administrationManager.setAdministrationStudentArrayList(AdministrationReadWriteFile.getInstance().readFile());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         int choice = -2;
 
-        while (choice != -1) {
+        while (choice != 0) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhập mã sinh viên: ");
+            String codeStudent = scanner.nextLine();
+            administrationStudent = administrationManager.searchStudent(codeStudent);
+            System.out.println(administrationStudent);
             System.out.println("-----Sinh viên khoa quản lý-----");
             System.out.println("1. Đăng ký học");
             System.out.println("2. Xem học phí");
             System.out.println("0. Quay lại");
 
-            Scanner scanner = new Scanner(System.in);
+
             choice = scanner.nextInt();
 
             switch (choice) {
@@ -39,13 +59,14 @@ public class AdministrationStudentSub {
                     }
                     System.out.println("Học phí của học viên là:" + total);
                 }
+                case 0:
             }
         }
     }
     private void creatSub() {
         int choose = -2;
 
-        while (choose != -1) {
+        while (choose != 0) {
             System.out.println("-----Danh sách đăng ký học-----");
             System.out.println("1. Đăng ký bộ môn tiếng anh");
             System.out.println("2. Đăng ký bộ môn toán");
@@ -64,12 +85,7 @@ public class AdministrationStudentSub {
                     System.out.println("3. Đăng ký bộ môn toán");
                     creatMath();
                 }
-                case 0: {
-                    System.exit(0);
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                }
+                case 0:
             }
         }
     }
@@ -86,6 +102,18 @@ public class AdministrationStudentSub {
         System.out.println("Nhập mã môn học: ");
         String codeSub2 = scanner3.nextLine();
         subjectList.add(math.sub(codeSub2));
+    }
+
+    public SubjectStudent searchSubjectStudentMath(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(math.subNew(nameTeacher),administrationStudent);
+        subjectStudentManager.addNewSubjectStudent(subjectStudent);
+        return subjectStudent;
+    }
+
+    public SubjectStudent searchSubjectStudentEnglish(String nameTeacher) {
+        SubjectStudent subjectStudent = new SubjectStudent(english.subNew(nameTeacher),administrationStudent);
+        subjectStudentManager.addNewSubjectStudent(subjectStudent);
+        return subjectStudent;
     }
 }
 

@@ -28,10 +28,20 @@ public class Math {
         subjectManager.showSubject();
     }
     public Subject sub(String codeSub) {
-        subjectManager.showSubject();
         Subject subject = null;
         for (Subject sub: subjectManager.getSubjectArrayList()) {
             if (sub.getCodeSubject().equals(codeSub)) {
+                subject = sub;
+                break;
+            }
+        }
+        return subject;
+    }
+
+    public Subject subNew(String nameTeacher) {
+        Subject subject = null;
+        for (Subject sub: subjectManager.getSubjectArrayList()) {
+            if (sub.getNameTeacher().equals(nameTeacher)) {
                 subject = sub;
                 break;
             }

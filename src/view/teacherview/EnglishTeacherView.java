@@ -24,7 +24,7 @@ public class EnglishTeacherView {
             e.printStackTrace();
         }
         int choice = -2;
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("Danh sách giảng viên bộ môn English!");
             System.out.println("1. Thêm giảng viên");
             System.out.println("2. Sửa thông tin giảng viên");
@@ -62,14 +62,8 @@ public class EnglishTeacherView {
                     englishTeacherManager.showEnglishTeacher();
                     break;
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
+
             }
         }
     }
