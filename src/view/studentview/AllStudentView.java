@@ -12,7 +12,7 @@ public class AllStudentView {
         int choice = -2;
 
 
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("-----Quản lý sinh viên-----");
             System.out.println("1. Sinh viên ngành Kế Toán");
             System.out.println("2. Sinh viên ngành Quản Lý");
@@ -37,13 +37,7 @@ public class AllStudentView {
                 constructionStudentView.runConstruction();
                 break;
             }
-            case 0: {
-                System.exit(0);
-                break;
-            }
-            default: {
-                System.out.println("Không tìm thấy yêu cầu!");
-            }
+            case 0:
 
 
         }

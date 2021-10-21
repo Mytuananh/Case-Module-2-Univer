@@ -114,6 +114,7 @@ public class MechanicsTeacherView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã giảng viên: ");
         String codeTeacher = scanner.nextLine();
-        mechanicsTeacherManager.searchTeacher(codeTeacher);
+        MechanicsTeacher mechanicsTeacher = mechanicsTeacherManager.searchTeacher(codeTeacher);
+        System.out.println(mechanicsTeacher);
     }
 }

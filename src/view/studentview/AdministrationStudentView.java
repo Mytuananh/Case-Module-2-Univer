@@ -13,7 +13,6 @@ public class AdministrationStudentView {
     private static final AdministrationStudentView administrationStudentView = new AdministrationStudentView();
     private AdministrationStudentView() {
     }
-
     public static AdministrationStudentView getInstance() {
         return administrationStudentView;
     }
@@ -25,7 +24,7 @@ public class AdministrationStudentView {
             e.printStackTrace();
         }
         int choice = -2;
-        while (choice != -1) {
+        while (choice !=0) {
             System.out.println("Danh sách sinh viên ngành Quản Lý");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");
@@ -55,21 +54,16 @@ public class AdministrationStudentView {
                 }
                 case 4: {
                     System.out.println("4. Tìm kiếm sinh viên");
-                    searchStudent(administrationManager);
+                    searchStudents(administrationManager);
                     break;
                 }
                 case 5: {
                     System.out.println("5. Danh sách sinh viên");
                     administrationManager.showAdministrationStudent();
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
+
+
             }
         }
     }
@@ -113,10 +107,11 @@ public class AdministrationStudentView {
         String codeStudent = scanner.nextLine();
         administrationManager.removeStudent(codeStudent);
     }
-    private void searchStudent(AdministrationManager administrationManager) {
+    private void searchStudents(AdministrationManager administrationManager) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã sinh viên: ");
         String codeStudent = scanner.nextLine();
-        administrationManager.searchStudent(codeStudent);
+        AdministrationStudent administrationStudent1 = administrationManager.searchStudent(codeStudent);
+        System.out.println(administrationStudent1);
     }
 }

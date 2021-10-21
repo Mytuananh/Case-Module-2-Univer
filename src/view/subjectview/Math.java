@@ -12,9 +12,10 @@ public class Math {
     public static Math getInstance() {
         return math;
     }
-    public  void runMath() {
-        SubjectManager subjectManager = SubjectManager.getInstance();
-        ArrayList<Subject> mathArrayList = new ArrayList<>();
+    SubjectManager subjectManager = SubjectManager.getInstance();
+    ArrayList<Subject> mathArrayList = new ArrayList<>();
+    public void runMath() {
+
         Subject subject = new Subject("ToánI", 320, "Tien Thanh", "T1");
         Subject subject1 = new Subject("ToánII", 640, "Xuan An", "T2");
         Subject subject2 = new Subject("ToánIII", 640, "Mai Tue", "T3");
@@ -25,6 +26,16 @@ public class Math {
         subjectManager.addNewSubject(subject2);
         subjectManager.addNewSubject(subject3);
         subjectManager.showSubject();
-
+    }
+    public Subject sub(String codeSub) {
+        subjectManager.showSubject();
+        Subject subject = null;
+        for (Subject sub: subjectManager.getSubjectArrayList()) {
+            if (sub.getCodeSubject().equals(codeSub)) {
+                subject = sub;
+                break;
+            }
+        }
+        return subject;
     }
 }

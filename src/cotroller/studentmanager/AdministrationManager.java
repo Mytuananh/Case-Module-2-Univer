@@ -76,9 +76,9 @@ public class AdministrationManager {
 
     public AdministrationStudent searchStudent(String codeStudent) {
         AdministrationStudent administrationStudent = null;
-        for (int i = 0; i < administrationStudentArrayList.size(); i++) {
-            if (administrationStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
-                administrationStudent = getAdministrationStudentArrayList().get(i);
+        for (AdministrationStudent adm: administrationStudentArrayList) {
+            if (adm.getCodeStudent().equals(codeStudent)) {
+                administrationStudent = adm;
                 break;
             }
         }

@@ -16,7 +16,7 @@ public class Admin {
 
         int choice = -2;
 
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("-------Quản lý nhà trường-------");
             System.out.println("1. Quản lý sinh viên");
             System.out.println("2. Quản lý giảng viên");
@@ -42,12 +42,7 @@ public class Admin {
                     allSubjectView.runAllSub();
                     break;
                 }
-                case 0: {
-                    System.exit(0);
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                }
+                case 0:
 
             }
         }

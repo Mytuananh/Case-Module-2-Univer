@@ -9,7 +9,7 @@ public class AllSubjectView {
     private static final Mechanics mechanics = Mechanics.getInstance();
     public void runAllSub() {
 
-        int choice = -1;
+        int choice = -2;
 
         while (choice != -1) {
             System.out.println("-----Danh sách môn học-----");

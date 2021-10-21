@@ -112,6 +112,7 @@ public class HydraulicTeacherView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã giảng viên: ");
         String codeTeacher = scanner.nextLine();
-        hydraulicTeacherManager.searchTeacher(codeTeacher);
+        HydraulicTeacher hydraulicTeacher = hydraulicTeacherManager.searchTeacher(codeTeacher);
+        System.out.println(hydraulicTeacher);
     }
 }

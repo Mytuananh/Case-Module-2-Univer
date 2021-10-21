@@ -76,9 +76,9 @@ public class ConstructionManager {
 
     public ConstructionStudent searchStudent(String codeStudent) {
         ConstructionStudent constructionStudent = null;
-        for (int i = 0; i < constructionStudentArrayList.size(); i++) {
-            if (constructionStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
-                constructionStudent = getConstructionStudentArrayList().get(i);
+        for (ConstructionStudent con: constructionStudentArrayList) {
+            if (con.getCodeStudent().equals(codeStudent)) {
+                constructionStudent = con;
                 break;
             }
         }

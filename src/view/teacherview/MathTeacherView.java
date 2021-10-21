@@ -113,6 +113,7 @@ public class MathTeacherView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã giảng viên: ");
         String codeTeacher = scanner.nextLine();
-        mathTeacherManager.searchTeacher(codeTeacher);
+        MathTeacher mathTeacher = mathTeacherManager.searchTeacher(codeTeacher);
+        System.out.println(mathTeacher);
     }
 }

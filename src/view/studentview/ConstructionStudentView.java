@@ -25,7 +25,7 @@ public class ConstructionStudentView {
             e.printStackTrace();
         }
         int choice = -2;
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("Danh sách sinh viên ngành Công Trình");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");
@@ -62,14 +62,7 @@ public class ConstructionStudentView {
                     System.out.println("5. Danh sách sinh viên");
                     constructionManager.showConstructionStudent();
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
             }
         }
     }
@@ -117,6 +110,7 @@ public class ConstructionStudentView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã sinh viên: ");
         String codeStudent = scanner.nextLine();
-        constructionManager.searchStudent(codeStudent);
+        ConstructionStudent constructionStudent = constructionManager.searchStudent(codeStudent);
+        System.out.println(constructionStudent);
     }
 }

@@ -26,7 +26,7 @@ public class AccountantStudentView {
             e.printStackTrace();
         }
         int choice = -2;
-        while (choice != -1) {
+        while (choice != 0) {
             System.out.println("Danh sách sinh viên ngành Kế Toán");
             System.out.println("1. Thêm sinh viên");
             System.out.println("2. Sửa thông tin sinh viên");
@@ -64,14 +64,7 @@ public class AccountantStudentView {
                     accountantManager.showAccountantStudent();
                     break;
                 }
-                case 0: {
-                    System.exit(0);
-                    break;
-                }
-                default: {
-                    System.out.println("Không tìm thấy yêu cầu!");
-                    break;
-                }
+                case 0:
             }
         }
     }
@@ -119,6 +112,7 @@ public class AccountantStudentView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã sinh viên: ");
         String codeStudent = scanner.nextLine();
-        accountantManager.searchStudent(codeStudent);
+        AccountantStudent accountantStudent = accountantManager.searchStudent(codeStudent);
+        System.out.println(accountantStudent);
     }
 }

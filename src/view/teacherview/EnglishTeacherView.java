@@ -112,6 +112,7 @@ public class EnglishTeacherView {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập mã giảng viên: ");
         String codeTeacher = scanner.nextLine();
-        englishTeacherManager.searchTeacher(codeTeacher);
+        EnglishTeacher englishTeacher = englishTeacherManager.searchTeacher(codeTeacher);
+        System.out.println(englishTeacher);
     }
 }

@@ -77,9 +77,9 @@ public class AccountantManager {
 
     public AccountantStudent searchStudent(String codeStudent) {
         AccountantStudent accountantStudent = null;
-        for (int i = 0; i < accountantStudentArrayList.size(); i++) {
-            if (accountantStudentArrayList.get(i).getCodeStudent().equals(codeStudent)) {
-                accountantStudent = getAccountantStudentArrayList().get(i);
+        for (AccountantStudent acc: accountantStudentArrayList) {
+            if (acc.getCodeStudent().equals(codeStudent)) {
+                accountantStudent = acc;
                 break;
             }
         }

@@ -13,9 +13,9 @@ public class Hydraulic {
     public static Hydraulic getInstance() {
         return hydraulic;
     }
+    SubjectManager subjectManager = SubjectManager.getInstance();
+    ArrayList<Subject> hydraulicArrayList = new ArrayList<>();
     public void runHydraulic() {
-        SubjectManager subjectManager = SubjectManager.getInstance();
-        ArrayList<Subject> hydraulicArrayList = new ArrayList<>();
         Subject subject1 = new Subject("Đập và Hồ chứa", 640,"Mong Quy","DH1");
         Subject subject2 = new Subject("Động lực học công trình", 640, "Dao Hong", "DT1");
         Subject subject3 = new Subject("Công trình trên hệ thống thủy lợi", 640, "Van Lang", "CL1");
@@ -24,6 +24,18 @@ public class Hydraulic {
         subjectManager.addNewSubject(subject2);
         subjectManager.addNewSubject(subject3);
         subjectManager.showSubject();
-
+    }
+    public Subject sub(String codeSub) {
+        subjectManager.showSubject();
+        Subject subject = null;
+        for (Subject sub: subjectManager.getSubjectArrayList()) {
+            if (sub.getCodeSubject().equals(codeSub)) {
+                subject = sub;
+                break;
+            }
+        }
+        return subject;
     }
 }
+
+
