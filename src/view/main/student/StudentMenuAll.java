@@ -1,10 +1,16 @@
 package view.main.student;
 
-import model.students.AdministrationStudent;
 
 import java.util.Scanner;
 
 public class StudentMenuAll {
+    private static final StudentMenuAll studentMenuAll = new StudentMenuAll();
+    private StudentMenuAll() {
+    }
+
+    public static StudentMenuAll getInstance() {
+        return studentMenuAll;
+    }
    private static final AccountantStudentSub accountantStudentSub = new AccountantStudentSub();
    private static final AdministrationStudentSub administrationStudentSub = new AdministrationStudentSub();
    private static final ConstructionStudentSub constructionStudentSub = new ConstructionStudentSub();

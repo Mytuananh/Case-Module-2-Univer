@@ -7,6 +7,12 @@ import view.teacherview.AllTeacherView;
 import java.util.Scanner;
 
 public class Admin {
+    private static final Admin admin = new Admin();
+    private Admin() {
+    }
+    public static Admin getInstance() {
+        return admin;
+    }
    private static final AllStudentView allStudentView = new AllStudentView();
     private static final AllTeacherView allTeacherView = new AllTeacherView();
     private static final AllSubjectView allSubjectView = new AllSubjectView();

@@ -1,12 +1,9 @@
 package view.main.student;
 
-import cotroller.management.SubjectStudentManager;
+
 import cotroller.studentmanager.AccountantManager;
-import model.students.AccountantStudent;
 import model.subject.Subject;
-import model.subject.SubjectStudent;
 import storage.studenttext.AccountantReadWriteFile;
-import storage.subjecttext.SubjectStudentText;
 import view.subjectview.English;
 import view.subjectview.Math;
 
@@ -17,10 +14,7 @@ import java.util.Scanner;
 public class AccountantStudentSub {
     private static final English english = English.getInstance();
     private static final Math math = Math.getInstance();
-    private static AccountantStudent accountantStudent;
-    SubjectStudentManager subjectStudentManager = SubjectStudentManager.getInstance();
     ArrayList<Subject> subjectList = new ArrayList<>();
-    ArrayList<SubjectStudent> subjectStudentArrayList = new ArrayList<>();
 
 
     public void runView() {
@@ -30,14 +24,14 @@ public class AccountantStudentSub {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         int choice = -2;
 
         while (choice != 0) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Nhập mã sinh viên: ");
             String codeStudent = scanner.nextLine();
-            accountantStudent = accountantManager.searchStudent(codeStudent);
-            System.out.println(accountantStudent);
+            System.out.println( accountantManager.searchStudent(codeStudent));
             System.out.println("-----Sinh viên khoa kế toán-----");
             System.out.println("1. Đăng ký học");
             System.out.println("2. Xem học phí");
@@ -54,7 +48,7 @@ public class AccountantStudentSub {
                 case 2: {
                     System.out.println("2. Xem học phí");
                     double total = 0;
-                    for (Subject sub: subjectList) {
+                    for (Subject sub : subjectList) {
                         total += sub.getTuition();
                     }
                     System.out.println("Học phí của học viên là:" + total);
@@ -64,6 +58,7 @@ public class AccountantStudentSub {
             }
         }
     }
+
     private void creatSub() {
         int choose = -2;
 
@@ -86,13 +81,14 @@ public class AccountantStudentSub {
                 case 2: {
                     System.out.println("3. Đăng ký bộ môn toán");
                     creatMath();
-
+                    break;
                 }
                 case 0:
 
             }
         }
     }
+
     private void creatEng() {
         english.runEnglish();
         Scanner scanner1 = new Scanner(System.in);
@@ -100,22 +96,12 @@ public class AccountantStudentSub {
         String codeSub = scanner1.nextLine();
         subjectList.add(english.sub(codeSub));
     }
+
     private void creatMath() {
         math.runMath();
         Scanner scanner3 = new Scanner(System.in);
         System.out.println("Nhập mã môn học: ");
         String codeSub2 = scanner3.nextLine();
         subjectList.add(math.sub(codeSub2));
-    }
-    public SubjectStudent searchSubjectStudentMath(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(math.subNew(nameTeacher),accountantStudent);
-        subjectStudentManager.addNewSubjectStudent(subjectStudent);
-        return subjectStudent;
-    }
-
-    public SubjectStudent searchSubjectStudentEnglish(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(english.subNew(nameTeacher),accountantStudent);
-        subjectStudentManager.addNewSubjectStudent(subjectStudent);
-        return subjectStudent;
     }
 }

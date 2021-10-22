@@ -1,13 +1,10 @@
 package view.main.student;
 
 
-import cotroller.management.SubjectStudentManager;
+
 import cotroller.studentmanager.ConstructionManager;
-import model.students.ConstructionStudent;
 import model.subject.Subject;
-import model.subject.SubjectStudent;
 import storage.studenttext.ConstructionReadWriteFile;
-import storage.subjecttext.SubjectStudentText;
 import view.subjectview.English;
 import view.subjectview.Hydraulic;
 import view.subjectview.Math;
@@ -23,10 +20,8 @@ public class ConstructionStudentSub {
     private static final Hydraulic hydraulic = Hydraulic.getInstance();
     private static final Math math = Math.getInstance();
     private static final Mechanics mechanics = Mechanics.getInstance();
-    private static ConstructionStudent constructionStudent;
-    SubjectStudentManager subjectStudentManager = SubjectStudentManager.getInstance();
     ArrayList<Subject> subjectList = new ArrayList<>();
-    ArrayList<SubjectStudent> subjectStudentArrayList = new ArrayList<>();
+
 
     public void runView() {
         ConstructionManager constructionManager = ConstructionManager.getInstance();
@@ -41,8 +36,8 @@ public class ConstructionStudentSub {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Nhập mã sinh viên: ");
             String codeStudent = scanner.nextLine();
-            constructionStudent = constructionManager.searchStudent(codeStudent);
-            System.out.println(constructionStudent);
+
+            System.out.println(constructionManager.searchStudent(codeStudent));
             System.out.println("-----Sinh viên khoa công trình-----");
             System.out.println("1. Đăng ký học");
             System.out.println("2. Xem học phí");
@@ -137,28 +132,6 @@ public class ConstructionStudentSub {
         System.out.println("Nhập mã môn học: ");
         String codeSub = scanner1.nextLine();
         subjectList.add(english.sub(codeSub));
-    }
-
-    public SubjectStudent searchSubjectStudentMath(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(math.subNew(nameTeacher),constructionStudent);
-        return subjectStudent;
-    }
-
-    public SubjectStudent searchSubjectStudentEnglish(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(english.subNew(nameTeacher),constructionStudent);
-        return subjectStudent;
-    }
-
-    public SubjectStudent searchSubjectStudentHydraulic(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(hydraulic.subNew(nameTeacher),constructionStudent);
-        subjectStudentManager.addNewSubjectStudent(subjectStudent);
-        return subjectStudent;
-    }
-
-    public SubjectStudent searchSubjectStudentMechanics(String nameTeacher) {
-        SubjectStudent subjectStudent = new SubjectStudent(mechanics.subNew(nameTeacher),constructionStudent);
-        subjectStudentManager.addNewSubjectStudent(subjectStudent);
-        return subjectStudent;
     }
 }
 
